@@ -5,9 +5,9 @@ app=Flask(__name__)
 @app.route('/api')
 def api():
     r=request.args
-    a=r.get("a",0)
-    b=r.get("b",0)
-    return { "sum": int(a)+int(b) }
+    a=int(r.get("a",0))
+    b=int(r.get("b",0))
+    return { "sum": a + b }
 
 
 
