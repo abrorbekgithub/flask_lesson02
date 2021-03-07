@@ -1,10 +1,12 @@
 from flask import Flask,request
 
 app=Flask(__name__)
-
+  
 @app.route('/api')
 def api():
-    return { }
+    r=request.args
+    # print(type(r['a']))
+    return { "a": r["a"],"b":r["b"] }
 
 
 
