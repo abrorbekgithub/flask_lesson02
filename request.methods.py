@@ -7,6 +7,10 @@ def api():
     r=request.args
     a=int(r.get("a",0))
     b=int(r.get("b",0))
+
+    for k,v in r.items():
+        print(k,v)
+
     return { "sum": a + b }
 
 
