@@ -19,6 +19,7 @@ def get_form():
     if request.method=='GET':
         print('get')
     if request.method=='POST':
+        print(request.form)
         print('post')
     return 'ok'
 
