@@ -14,10 +14,12 @@ def api():
 
     return { "sum": a + b }
 
-@app.route('/form',methods=['GET'])
+@app.route('/form',methods=['GET','POST'])
 def get_form():
-    values=request.values
-    print(values)
+    if request.method=='GET':
+        print('get')
+    if request.method=='POST':
+        print('post')
     return 'ok'
 
 @app.route('/')
