@@ -5,6 +5,7 @@ app=Flask(__name__)
 @app.route('/api')
 def api():
     r=request.args
+    print(r)
     a=int(r.get("a",0))
     b=int(r.get("b",0))
 
@@ -13,8 +14,11 @@ def api():
 
     return { "sum": a + b }
 
-
-
+@app.route('/form',methods=['GET'])
+def get_form():
+    values=request.values
+    print(values)
+    return 'ok'
 
 @app.route('/')
 def hello():
